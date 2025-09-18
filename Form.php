@@ -1,4 +1,4 @@
-<?php
+<?php 
 class Form {
     private $form;
 
@@ -14,17 +14,17 @@ class Form {
         $this->form .= "$label: <input type='password' name='$name'><br>";
     }
 
-    function addRadio($name, $options = []) {
+    function addCheckbox($name, $options = []) {
         $this->form .= "Jenis Laundry:<br>";
         foreach ($options as $value => $label) {
-            $this->form .= "<input type='radio' name='$name' value='$value'> $label<br>";
+            $this->form .= "<input type='checkbox' name='{$name}[]' value='$value'> $label<br>";
         }
     }
 
-    function addCheckbox($name, $options = []) {
+    function addRadio($name, $options = []) {
         $this->form .= "Layanan:<br>";
         foreach ($options as $value => $label) {
-            $this->form .= "<input type='checkbox' name='{$name}[]' value='$value'> $label<br>";
+            $this->form .= "<input type='radio' name='$name' value='$value'> $label<br>";
         }
     }
 
